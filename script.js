@@ -22,30 +22,97 @@ var specCharArray = ["!","@","#","$","%","&","*","_","-","=","+","?","~"]
 
 
 function generatePassword() {
-  var passLength = prompt("Please enter desired password length, 8-24 characters.");
+  var passLength = prompt("Please enter desired password length, 8-128 characters.");
+
+  if (passLength < 8 || passLength > 128){
+    window.alert("Length must be between 8 and 128")
+    generatePassword()
+  }
+
   var lowerCase = confirm("Do you want lowercase letters?")
   var upperCase = confirm("Do you want uppercase letters?")
   var numbers = confirm("Do you want numbers?")
   var specChar = confirm("Do you want special characters?")
-  if (lowerCase===true && upperCase===true && numbers===true && specChar===true){
-    var availChar = lowerCaseArray.concat(upperCaseArray,numbersArray,specCharArray)
-    for (var i = 0; i < passLength; i++) {
-      var ranChar = Math.floor(Math.random() * availChar.length);
-      var comChoice = availChar[ranChar];
-      console.log(comChoice);
-    }
+  
+  if (lowerCase===false && upperCase===false && numbers===false && specChar===false){
+    window.alert("You must select at least one option")
+    generatePassword()
   }
+  if (lowerCase===false){
+    lowerCaseArray = []
+  }
+  if (upperCase===false){
+    upperCaseArray = []
+  }
+  if (numbers===false){
+    numbersArray = []
+  }
+  if (specChar===false){
+    specCharArray = []
+  }
+
+  //if (lowerCase===true && upperCase===true && numbers===true && specChar===true){
+    var availChar = lowerCaseArray.concat(upperCaseArray,numbersArray,specCharArray)
+    var passArray = []
+    for (var i = 0; i < passLength; i++) {
+      var ranChar = Math.floor(Math.random() * availChar.length)
+      var comChoice = availChar[ranChar]
+      passArray.push(comChoice)
+    }
+    password = passArray.join("")
+    window.alert(password)
+  //}
+
+  // else if (lowerCase===true && upperCase===true && numbers===true && specChar===false){
+  //   var availChar = lowerCaseArray.concat(upperCaseArray,numbersArray)
+  //   var passArray = []
+  //   for (var i = 0; i < passLength; i++) {
+  //     var ranChar = Math.floor(Math.random() * availChar.length)
+  //     var comChoice = availChar[ranChar]
+  //     passArray.push(comChoice)
+  //   }
+  //   password = passArray.join("")
+  //   window.alert(password)
+  // }
+
+  // else if (lowerCase===true && upperCase===true && numbers===false && specChar===false){
+  //   var availChar = lowerCaseArray.concat(upperCaseArray)
+  //   var passArray = []
+  //   for (var i = 0; i < passLength; i++) {
+  //     var ranChar = Math.floor(Math.random() * availChar.length)
+  //     var comChoice = availChar[ranChar]
+  //     passArray.push(comChoice)
+  //   }
+  //   password = passArray.join("")
+  //   window.alert(password)
+  // }
+
+  // else if (lowerCase===true && upperCase===false && numbers===false && specChar===false){
+  //   var availChar = lowerCaseArray
+  //   var passArray = []
+  //   for (var i = 0; i < passLength; i++) {
+  //     var ranChar = Math.floor(Math.random() * availChar.length)
+  //     var comChoice = availChar[ranChar]
+  //     passArray.push(comChoice)
+  //   }
+  //   password = passArray.join("")
+  //   window.alert(password)
+  // }
+
+  // else if (lowerCase===true && upperCase===false && numbers===true && specChar===false){
+  //   var availChar = lowerCaseArray.concat(numbersArray)
+  //   var passArray = []
+  //   for (var i = 0; i < passLength; i++) {
+  //     var ranChar = Math.floor(Math.random() * availChar.length)
+  //     var comChoice = availChar[ranChar]
+  //     passArray.push(comChoice)
+  //   }
+  //   password = passArray.join("")
+  //   window.alert(password)
+  // }
+
+  
 }
-
-var numbers = [0, 1, 2, 3];
-numbersToString = numbers.join("")
-console.log(numbersToString);
-
-//function randomize(){
-  //var ranChar = Math.floor(Math.random() * availChar.length);
-  //var comChoice = availChar[ranChar];
-  //console.log(comChoice);
-//}
 
 
 generatePassword();
