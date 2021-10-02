@@ -1,18 +1,17 @@
 # Password-Generator
 
 ## Description
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
+I built this password generator because cybersecurity is extremely important but often overlooked, and one of the most important parts of cybersecurity is having a good password. However, it can be hard to constantly come up with new secure passwords, so this application does it for you. For this project, I had HTML and CSS provided to me, as well as a few lines of starting JavaScript. I wrote the rest of the JavaScript.
+
+In building this project, I learned about the power of JavaScript. Responding to a user's input is a very important aspect of JavaScript, and building this application taught me an effective way to do it. I also gained experience in using JavaScript to randomize something, which is a useful tool.
+
+Link to deployed application: https://gjguerin96.github.io/Password-Generator/
 
 ## Usage
-Provide instructions and examples for use. Include screenshots as needed.
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
+This application has a "Generate Password" button that the user can click, which will cause a series of 5 dialog boxes to pop up and request a user input (see screenshot). Once the user has responded to all 5, their new password will appear in the "Your Secure Password" box. If they are not happy with their password, they can simply generate another password until they are satisfied.
+
+![A screenshot showing a dialog box, the "Your Secure Password" box, and the "Generate Password" button.](Assets/pass-gen-screenshot.png)
+
     
 ## Credits
 I recieved some assistance and advice from my tutor, Vinnie Lopez. I also talked with my roommate about the best way to randomize something in Javascript.
