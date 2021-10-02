@@ -31,14 +31,6 @@ function generatePassword() {
     window.alert("You must select at least one option")
     return null
   }
-
-  // var passwordOptions = {
-  //   length: passLength,
-  //   hasLowerCase: lowerCase,
-  //   hasUpperCase: upperCase,
-  //   hasNumbers: numbers,
-  //   hasSymbols: specChar
-  // }
   
   // creates an empty array and then assigns character types to it based on what the user selected
   var availChar = []
